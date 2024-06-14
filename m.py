@@ -359,12 +359,12 @@ def play_game():
         else:
             current_player = player1
 
+
         player_table = PrettyTable()
-        player_table.field_names = ["Player", "Position", "Money", "Properties"]
-        player_table.add_row(["\033[94mPlayer 1\033[0m", player1.position, f"\033[94m${player1.money}\033[0m", ", \n".join(player1.properties)])
-        player_table.add_row(["\033[91mComputer\033[0m", player2.position, f"\033[91m${player2.money}\033[0m", ",\n ".join(player2.properties)])
+        player_table.field_names = ["Player", "Position", "Money", "Properties", "Mortgaged Properties"]
+        player_table.add_row(["\033[94mPlayer 1\033[0m", player1.position, f"\033[94m${player1.money}\033[0m", ", \n".join(player1.properties), ", \n".join(player1.mortgaged_properties)])
+        player_table.add_row(["\033[91mComputer\033[0m", player2.position, f"\033[91m${player2.money}\033[0m", ", \n".join(player2.properties), ", \n".join(player2.mortgaged_properties)])
         print("\nPlayer Information:")
         print(player_table)
-
 if __name__ == "__main__":
     play_game()
